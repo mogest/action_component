@@ -67,7 +67,7 @@ end
 class PostComponent < ActionComponent::Base
   def view
     div(class: 'post') do
-      h2(@post.title)
+      h2 @post.title
 
       component AuthorComponent, author: @post.author
 
