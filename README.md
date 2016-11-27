@@ -65,6 +65,10 @@ end
 # app/components/post_component.rb
 
 class PostComponent < ActionComponent::Base
+  # You can specify which variables must be passed to this component and their
+  # types (but only if you want to; by default it accepts everything.)
+  required post: Post
+
   def view
     div(class: 'post') do
       h2 @post.title
