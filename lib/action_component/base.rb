@@ -64,9 +64,11 @@ module ActionComponent
       @_view.concat(@_view.render(*args))
     end
 
-    def render_component(component, opts = {})
+    def component(component, opts = {})
       self.class.render(@_view, opts)
     end
+
+    alias_method :render_component, :component
 
     def text(content)
       @_view.concat content
