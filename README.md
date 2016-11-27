@@ -4,9 +4,9 @@ A React-style component system for Ruby on Rails.
 
 This gem should be considered "alpha" as it currently has no tests.
 
-# Examples
+## Examples
 
-## Example 1: Integrating components into a standard Rails app
+### Example 1: Integrating components into a standard Rails app
 
 ```html+erb
 <!-- app/views/posts/show.html.erb -->
@@ -47,11 +47,41 @@ class AuthorComponent < ActionComponent::Base
 end
 ```
 
-# Contributing
+### Example 2: Using components instead of views
+
+```ruby
+# app/controllers/posts_controller.rb
+
+class PostsController < ApplicationController
+  def show
+    post = Post.find(params[:id])
+
+    render_component PostComponent, post: post
+  end
+end
+```
+
+```ruby
+# app/components/post_component.rb
+
+class PostComponent < ActionComponent::Base
+  def view
+    div(class: 'post') do
+      h2(@post.title)
+
+      component AuthorComponent, author: @post.author
+
+      insert simple_format(@post.content)
+    end
+  end
+end
+```
+
+## Contributing
 
 Pull requests welcome!  If you're thinking of contributing a new feature, or
 significantly changing an existing feature, please propose it as an issue.
 
-# Licence
+## Licence
 
 MIT.  Copyright Roger Nesbitt.
