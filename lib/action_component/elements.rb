@@ -1,8 +1,10 @@
 require 'active_support/concern'
+require 'active_support/core_ext/string/output_safety'
 
 module ActionComponent
   module Elements
     extend ActiveSupport::Concern
+    include ERB::Util
 
     ELEMENTS = %w(
       html head title base link meta style

@@ -1,4 +1,5 @@
 require 'active_support/concern'
+require 'active_support/core_ext/class/attribute'
 
 module ActionComponent
   module Constraints
@@ -17,10 +18,10 @@ module ActionComponent
         fields.each do |field|
           if field.is_a?(Hash)
             field.each do |name, class_constraint|
-              self.initializer_constraints += [Constraint.new(name.to_sym, class_constraint, true)]
+              self.initializer_constraints += [Constraint.new(name, class_constraint, true)]
             end
           else
-            self.initializer_constraints += [Constraint.new(field.to_sym, nil, true)]
+            self.initializer_constraints += [Constraint.new(field, nil, true)]
           end
         end
       end
@@ -29,7 +30,7 @@ module ActionComponent
         raise ActionComponent::ConstraintError, "optional can only take a hash of field names and classes" unless fields.is_a?(Hash)
 
         fields.each do |name, class_constraint|
-          self.initializer_constraints += [Constraint.new(name.to_sym, class_constraint, false)]
+          self.initializer_constraints += [Constraint.new(name, class_constraint, false)]
         end
       end
     end

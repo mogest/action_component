@@ -1,3 +1,5 @@
+require 'active_support/core_ext/module/delegation'
+
 module ActionComponent
   RenderError = Class.new(StandardError)
   ConstraintError = Class.new(StandardError)
@@ -48,7 +50,7 @@ module ActionComponent
     end
 
     def component(component, opts = {})
-      self.class.render(@_view, opts)
+      component.render(@_view, opts)
     end
 
     alias_method :render_component, :component

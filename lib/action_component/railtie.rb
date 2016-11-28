@@ -1,3 +1,5 @@
+require 'rails/railtie'
+
 module ActionComponent
   class Railtie < Rails::Railtie
     initializer "action_component.add_to_action_controller" do
