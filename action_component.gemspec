@@ -13,11 +13,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{React-style components for Rails}
   s.description = %q{React-style components for Rails, mixing together the controller and a DSL language for HTML views.}
 
-  s.add_dependency "actionpack", ">= 4"
-  s.add_dependency "activesupport", ">= 4"
-  s.add_dependency "railties", ">= 4"
+  s.required_ruby_version = '>= 2.0'
 
-  s.add_development_dependency "rspec"
+  s.add_dependency "actionpack", [">= 4", "< 6"]
+  s.add_dependency "activesupport", [">= 4", "< 6"]
+  s.add_dependency "railties", [">= 4", "< 6"]
+
+  s.add_development_dependency "rspec", "~> 3.5"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- spec/*`.split("\n")
