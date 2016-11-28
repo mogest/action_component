@@ -2,7 +2,20 @@
 
 A React-style component system for Ruby on Rails.
 
-This gem should be considered "alpha" as it currently has no tests.
+As your application gets bigger, you'll find you have components which are common to multiple pages.
+The normal Rails way is to use a `render :partial`, but you might have some logic and/or database
+setup you want to do for this partial.  Short of putting them in every controller that uses the
+component, or even worse, putting them in the view, there's no elegant solution.
+
+Enter ActionComponent.  Encapsulate a component's setup logic and view in the same class, and
+render the view either from an existing Rails view, or straight from the controller.
+
+While you can use Rails views to render your component's HTML, you can also use the JSX-like language
+directly in your component's Ruby code.
+
+## Installation
+
+Add `gem "action_component"` to your Gemfile and run `bundle`.  Done.
 
 ## Examples
 
@@ -80,6 +93,11 @@ class PostComponent < ActionComponent::Base
   end
 end
 ```
+
+## More documentation to come
+
+ActionComponent is new.  It works just fine, but at the moment if you need more information than is given above,
+please dive into the (very small) codebase to learn more.
 
 ## Contributing
 
