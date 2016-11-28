@@ -8,7 +8,7 @@ setup you want to do for this partial.  Short of putting them in every controlle
 component, or even worse, putting them in the view, there's no elegant solution.
 
 Enter ActionComponent.  Encapsulate a component's setup logic and view in the same class, and
-render the view either from an existing Rails view, or straight from the controller.
+render the component either from an existing Rails view, or straight from the controller.
 
 While you can use Rails views to render your component's HTML, you can also use the JSX-like language
 directly in your component's Ruby code.
