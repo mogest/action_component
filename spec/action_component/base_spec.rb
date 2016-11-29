@@ -47,6 +47,8 @@ RSpec.describe ActionComponent::Base do
 
           div datetime_formatter(@post.posted_at), class: "datetime"
 
+          text "!"
+
           render "some_view"
 
           component AuthorComponent, author: @post.author
@@ -74,6 +76,7 @@ RSpec.describe ActionComponent::Base do
         [:concat, "content_tag [\"h2\", \"Test Post\", nil]"],
         [:content_tag, "div", "28 November 2016 11:09", {:class=>"datetime"}],
         [:concat, "content_tag [\"div\", \"28 November 2016 11:09\", {:class=>\"datetime\"}]"],
+        [:concat, "!"],
         [:render, "some_view"],
         [:concat, "render [\"some_view\"]"],
         [:content_tag, "div", "Roger Nesbitt", nil],

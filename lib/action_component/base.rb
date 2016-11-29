@@ -45,6 +45,14 @@ module ActionComponent
       end
     end
 
+    def text(content)
+      @_view.concat content
+      nil
+    end
+
+    alias_method :text_node, :text
+    alias_method :insert, :text
+
     def render(*args)
       @_view.concat(@_view.render(*args))
     end

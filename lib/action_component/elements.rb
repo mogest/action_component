@@ -21,9 +21,6 @@ module ActionComponent
 
     included do
       define_tags *ELEMENTS
-
-      alias_method :text_node, :text
-      alias_method :insert, :text
     end
 
     class_methods do
@@ -39,10 +36,6 @@ module ActionComponent
     end
 
     private
-
-    def text(content)
-      @_view.concat content
-    end
 
     def doctype(text = "html")
       @_view.concat("<!doctype #{h(text)}>".html_safe)

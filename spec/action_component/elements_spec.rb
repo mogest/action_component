@@ -23,14 +23,6 @@ RSpec.describe ActionComponent::Elements do
     end
   end
 
-  describe "#text" do
-    it "concats the supplied text" do
-      subject.send(:text, "some content")
-
-      expect(view.calls).to eq [[:concat, 'some content']]
-    end
-  end
-
   describe "#doctype" do
     it "concats a doctype tag" do
       subject.send(:doctype)
