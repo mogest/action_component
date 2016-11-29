@@ -62,5 +62,13 @@ module ActionComponent
     end
 
     alias_method :render_component, :component
+
+    def form_for(*args, &block)
+      text @_view.form_for(*args, &block)
+    end
+
+    def form_tag(*args, &block)
+      text @_view.form_tag(*args, &block)
+    end
   end
 end

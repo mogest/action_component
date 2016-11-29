@@ -85,4 +85,20 @@ RSpec.describe ActionComponent::Base do
       ]
     end
   end
+
+  describe "auto-inserting methods" do
+    let(:view) { double }
+
+    %w(form_for form_tag).each do |method|
+      it "forwards #{method} to the view and inserts its value" do
+        expect(view).to receive(method).with(1, 2).and_yield.and_return("result")
+        expect(view).to receive(:concat).with("result")
+
+        called = false
+        subject.send(method, 1, 2) { called = true }
+
+        expect(called).to be true
+      end
+    end
+  end
 end
