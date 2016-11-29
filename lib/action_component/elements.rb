@@ -51,6 +51,9 @@ module ActionComponent
     def element(name, first = nil, second = nil, &block)
       if first.is_a?(Hash)
         opts = first
+      elsif second.is_a?(String) || second.is_a?(Symbol)
+        opts = {class: second.to_s}
+        text = first
       else
         opts = second
         text = first

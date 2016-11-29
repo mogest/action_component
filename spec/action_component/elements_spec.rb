@@ -112,5 +112,21 @@ RSpec.describe ActionComponent::Elements do
         }.to raise_error ActionComponent::RenderError
       end
     end
+
+    context "when the second argument is a string" do
+      it "converts the second argument into a hash with the class set" do
+        subject.send(:element, :name, 'text', 'blue')
+
+        expect(view.calls.first).to eq [:content_tag, :name, 'text', {class: 'blue'}]
+      end
+    end
+
+    context "when the second argument is a symbol" do
+      it "converts the second argument into a hash with the class set" do
+        subject.send(:element, :name, 'text', :blue)
+
+        expect(view.calls.first).to eq [:content_tag, :name, 'text', {class: 'blue'}]
+      end
+    end
   end
 end
