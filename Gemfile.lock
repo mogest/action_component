@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    action_component (0.1.1)
+    action_component (0.1.2)
       actionpack (>= 4, < 6)
       activesupport (>= 4, < 6)
       railties (>= 4, < 6)
