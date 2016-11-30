@@ -10,7 +10,7 @@ RSpec.describe ActionComponent::Base do
     it "makes a new component, then calls load and view, returning nil" do
       component = instance_double(ActionComponent::Base)
       expect(component).to receive(:load).ordered
-      expect(component).to receive(:view).ordered
+      expect(component).to receive(:render_view).ordered
 
       expect(ActionComponent::Base).to receive(:new)
         .with(view, {option: 'value'})

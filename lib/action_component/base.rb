@@ -8,13 +8,14 @@ module ActionComponent
   class Base
     include ActionComponent::Constraints
     include ActionComponent::Elements
+    prepend ActionComponent::Callbacks
 
     delegate :concat, to: :@_view
 
     def self.render(view, opts = {})
       component = new(view, opts)
       component.load
-      component.view
+      component.render_view
       nil
     end
 
@@ -33,6 +34,10 @@ module ActionComponent
 
     def view
       raise ActionComponent::ViewMissingError, "#{self.class.name} must define a view method to be a valid component"
+    end
+
+    def render_view
+      view
     end
 
     private
