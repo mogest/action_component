@@ -14,6 +14,7 @@ require 'action_component/railtie'
 require 'action_component/callbacks'
 require 'action_component/constraints'
 require 'action_component/elements'
+require 'action_component/element_builder'
 
 # Base
 

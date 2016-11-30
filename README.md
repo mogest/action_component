@@ -86,6 +86,10 @@ class PostComponent < ActionComponent::Base
     div(class: 'post') do
       h2 @post.title
 
+      # This renders a div with a class of 'published-at'
+      # Note the underscore has been replaced with a dash.
+      e.div.published_at "Published at #{l @post.published_at}"
+
       component AuthorComponent, author: @post.author
 
       insert simple_format(@post.content)
@@ -97,7 +101,7 @@ end
 ## More documentation to come
 
 ActionComponent is new.  It works just fine, but at the moment if you need more information than is given above,
-please dive into the (very small) codebase to learn more.
+please dive into the (small) codebase to learn more.
 
 ## Contributing
 

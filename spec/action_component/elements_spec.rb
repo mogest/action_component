@@ -121,4 +121,10 @@ RSpec.describe ActionComponent::Elements do
       end
     end
   end
+
+  describe "#e" do
+    it "returns an ElementBuilder" do
+      expect(subject.send(:e)).to be_a ActionComponent::ElementBuilder
+    end
+  end
 end

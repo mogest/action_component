@@ -66,5 +66,9 @@ module ActionComponent
 
       nil
     end
+
+    def e
+      ElementBuilder.new(self)
+    end
   end
 end
