@@ -60,7 +60,7 @@ RSpec.describe ActionComponent::Base do
       double(
         title:     "Test Post",
         author:    "Roger Nesbitt",
-        posted_at: Time.parse("2016-11-28 11:09:20"),
+        posted_at: Time.new(2016, 11, 28, 11, 9, 20),
       )
     end
 
