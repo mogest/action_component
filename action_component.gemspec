@@ -15,9 +15,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0'
 
-  s.add_dependency "actionpack", [">= 4", "< 6"]
-  s.add_dependency "activesupport", [">= 4", "< 6"]
-  s.add_dependency "railties", [">= 4", "< 6"]
+  s.add_dependency "actionpack", [">= 4", "< 7"]
+  s.add_dependency "activesupport", [">= 4", "< 7"]
+  s.add_dependency "railties", [">= 4", "< 7"]
 
   s.add_development_dependency "rspec", "~> 3.5"
 
