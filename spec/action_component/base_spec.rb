@@ -49,6 +49,10 @@ RSpec.describe ActionComponent::Base do
 
           text "!"
 
+          text do
+            "block return"
+          end
+
           render "some_view"
 
           component AuthorComponent, author: @post.author
@@ -77,6 +81,7 @@ RSpec.describe ActionComponent::Base do
         [:content_tag, "div", "28 November 2016 11:09", {:class=>"datetime"}],
         [:concat, "content_tag [\"div\", \"28 November 2016 11:09\", {:class=>\"datetime\"}]"],
         [:concat, "!"],
+        [:concat, "block return"],
         [:render, "some_view"],
         [:concat, "render [\"some_view\"]"],
         [:content_tag, "div", "Roger Nesbitt", nil],

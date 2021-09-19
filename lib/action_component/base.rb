@@ -50,8 +50,9 @@ module ActionComponent
       end
     end
 
-    def text(content)
-      @_view.concat content
+    def text(content = nil, &block)
+      @_view.concat content if content
+      @_view.concat block.call if block
       nil
     end
 
