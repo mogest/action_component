@@ -42,9 +42,9 @@ module ActionComponent
 
     private
 
-    def method_missing(method, *args, &block)
+    def method_missing(method, *args, **kwargs, &block)
       if @_view.respond_to?(method)
-        @_view.send(method, *args, &block)
+        @_view.send(method, *args, **kwargs, &block)
       else
         super
       end
