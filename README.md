@@ -1,5 +1,7 @@
 # ActionComponent
 
+> **This project is archived and no longer maintained.** If you are currently using ActionComponent, we recommend transitioning to an actively maintained alternative such as [ViewComponent](https://github.com/ViewComponent/view_component) or [Phlex](https://github.com/phlex-ruby/phlex).
+
 A React-style component system for Ruby on Rails.
 
 As your application gets bigger, you'll find you have components which are common to multiple pages.
